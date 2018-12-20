@@ -1,10 +1,16 @@
 @import 'colors';
+@import 'fonts';
 @import 'spacing';
+
+@import 'layout';
+@import 'svg';
 
 html,
 body {
     margin: 0;
-    background-color: $white;
+    background-color: $base;
+    color: $white;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {

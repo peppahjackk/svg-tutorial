@@ -14,14 +14,16 @@
 3. Styling your asset
   - Inline vs class based
 
-
-
 4. Animating your asset
   - Basic animations
   - Morph
   - swap
 
-5. Gotchas
+5. Triggering your animation
+  - On load
+  - On view
+
+6. Gotchas
   - Text in svg
 
 
