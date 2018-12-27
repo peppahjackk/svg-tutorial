@@ -1,9 +1,9 @@
 import anime from 'animejs';
+import Pin from 'pin';
 
-var pinFlip = anime({
-  targets: '.icon.pin',
-  rotateY: '180deg',
-  duration: 6000
-}); 
+var pins = document.querySelectorAll('.icon.pin');
 
-console.log('hwllo world');
+for (var i = 0; i < pins.length; i++) {
+  new Pin(pins[i])
+}
+

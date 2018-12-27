@@ -34,8 +34,8 @@ var OUTPUT_FILE = 'app.min.js';
 **
 **************************************************************/
 
-function cleanBuild () {
-     del([BUILD_PATH + '/**/*.*']);
+function cleanBuild() {
+    del([BUILD_PATH + '/**/*.*']);
 }
 
 
@@ -45,7 +45,7 @@ function cleanBuild () {
 **
 **************************************************************/
 
-function copyAssets () {
+function copyAssets() {
     return gulp.src(ASSET_PATH + '/**/*')
         .pipe(gulp.dest(BUILD_PATH + '/assets'));
 }
@@ -62,34 +62,34 @@ function copyAssets () {
 **
 **************************************************************/
 
-function processJavascript () {
+function processJavascript() {
 
     var sourcemapPath = SCRIPTS_PATH + '/' + OUTPUT_FILE + '.map';
 
     // handles js files so that they work on the web
     var browserified = browserify({
-		paths: [ path.join(__dirname, SOURCE_PATH + '/js') ],
+        paths: [path.join(__dirname, SOURCE_PATH + '/js')],
         entries: [ENTRY_FILE],
         debug: true
     });
-	  
-	// converts ES6 to vanilla javascript. Note that preset is an NPM dependency
-	browserified.transform(babelify, { "presets": ["es2015"] });
-    browserified.transform(hoganify, { live:false, ext:'.html,.mustache' });
 
-	// bundles all the "require" dependencies together into one container
-	var bundle = browserified.bundle().on('error', function(error){
-		gutil.log(gutil.colors.red('[Build Error]', error.message));
-		this.emit('end');
+    // converts ES6 to vanilla javascript. Note that preset is an NPM dependency
+    browserified.transform(babelify, { "presets": ["es2015"] });
+    browserified.transform(hoganify, { live: false, ext: '.html,.mustache' });
+
+    // bundles all the "require" dependencies together into one container
+    var bundle = browserified.bundle().on('error', function (error) {
+        gutil.log(gutil.colors.red('[Build Error]', error.message));
+        this.emit('end');
     });
 
-	// now that stream is machine readable javascript, finish the rest of the gulp build tasks
-	return bundle
-	    .pipe( exorcist(sourcemapPath) )
-	    .pipe( source(OUTPUT_FILE) )
-	    .pipe( buffer() )
-	    //.pipe( uglify() )
-	    .pipe( gulp.dest(SCRIPTS_PATH) )
+    // now that stream is machine readable javascript, finish the rest of the gulp build tasks
+    return bundle
+        .pipe(exorcist(sourcemapPath))
+        .pipe(source(OUTPUT_FILE))
+        .pipe(buffer())
+        //.pipe( uglify() )
+        .pipe(gulp.dest(SCRIPTS_PATH))
 }
 
 
@@ -99,17 +99,17 @@ function processJavascript () {
 **
 **************************************************************/
 
-function processSASS () {
+function processSASS() {
 
-	var autoprefixerOptions = {
-	 	browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
-	};
+    var autoprefixerOptions = {
+        browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
+    };
 
-	return gulp.src(SOURCE_PATH + '/scss/main.scss')
-		.pipe(sourcemaps.init())
+    return gulp.src(SOURCE_PATH + '/scss/main.scss')
+        .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(sourcemaps.write())
-    	.pipe(autoprefixer(autoprefixerOptions))
+        .pipe(autoprefixer(autoprefixerOptions))
         .pipe(gulp.dest(BUILD_PATH + '/css'))
 }
 
@@ -120,11 +120,11 @@ function processSASS () {
 **
 **************************************************************/
 
-function processIndexHTML () {
+function processIndexHTML() {
 
-	return gulp.src(SOURCE_PATH + '/index.html')
-        .pipe( processHTML({}) )
-        .pipe( gulp.dest(BUILD_PATH) )
+    return gulp.src(SOURCE_PATH + '/index.html')
+        .pipe(processHTML({}))
+        .pipe(gulp.dest(BUILD_PATH))
 }
 
 
@@ -136,17 +136,17 @@ function processIndexHTML () {
 **
 **************************************************************/
 
-function serve () {
-    
+function serve() {
+
     var options = {
         server: {
             baseDir: BUILD_PATH
         },
         open: false // Change it to true if you wish to allow Browsersync to open a browser window.
     };
-    
+
     browserSync(options);
-    
+
     // Watches for changes in files inside the './src' folder.
     gulp.watch(SOURCE_PATH + '/js/**/*.js', ['watch-js']);
 
@@ -158,9 +158,9 @@ function serve () {
 
     // Watches for updates in mustache partials and templates and reloads javascript, since the they get compiled into js objects.
     gulp.watch(SOURCE_PATH + '/views/**/*.mustache', ['watch-js']);
-    
+
     // Watches for changes in files inside the './static' folder. Also sets 'keepFiles' to true (see cleanBuild()).
-    gulp.watch(ASSET_PATH + '/**/*', ['watch-assets']).on('change', function() {
+    gulp.watch(ASSET_PATH + '/**/*', ['watch-assets']).on('change', function () {
         return;
     });
 }
@@ -179,10 +179,10 @@ gulp.task('watch-sass', ['process-sass'], browserSync.reload);
 gulp.task('watch-html', ['process-html'], browserSync.reload);
 gulp.task('watch-assets', ['copy-assets'], browserSync.reload);
 
-gulp.task('build', function(callback){
+gulp.task('build', function (callback) {
     gulpSequence('clean-build', 'copy-assets', 'process-sass', 'process-html', 'process-javascript')(callback);
 });
-gulp.task('serve', function(callback){
+gulp.task('serve', function (callback) {
     gulpSequence('build', serve)(callback);
 });
 

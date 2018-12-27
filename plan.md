@@ -16,10 +16,12 @@
 
 4. Animating your asset
   - Basic animations
+  - Hamburger
   - Morph
   - swap
 
 5. Triggering your animation
+  - On click
   - On load
   - On view
 

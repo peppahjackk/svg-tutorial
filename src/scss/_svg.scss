@@ -1,3 +1,11 @@
 .icon {
-  
+  &.red {
+    path {
+      // fill: $accent;
+    }
+  }
+}
+
+.test path {
+  fill: $accent;
 }
