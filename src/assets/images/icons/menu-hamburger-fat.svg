@@ -1,0 +1,13 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.35 25">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #7f76d1;
+      }
+    </style>
+  </defs>
+  <title>menu-hamburger-fat</title>
+  <path class="cls-1" d="M2.38,0H33a2.39,2.39,0,0,1,0,4.77H2.38A2.39,2.39,0,0,1,2.38,0Z"/>
+  <path class="cls-1" d="M2.38,10.12H33a2.38,2.38,0,1,1,0,4.76H2.38a2.38,2.38,0,0,1,0-4.76Z"/>
+  <path class="cls-1" d="M2.38,20.23H33A2.39,2.39,0,0,1,33,25H2.38a2.39,2.39,0,0,1,0-4.77Z"/>
+</svg>

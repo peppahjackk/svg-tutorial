@@ -1,11 +1,42 @@
 .icon {
-  &.red {
-    path {
-      // fill: $accent;
-    }
+  path {
+    fill: white;
+  }
+  &:not(:last-child) {
+    margin-right: 1em;
   }
 }
 
-.test path {
-  fill: $accent;
+.icon-container {
+  position: relative;
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
+#pulse-beat {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: $accent;
+}
+
+#hamburger {
+  position: relative;
+
+  path {
+    position: absolute;
+    // transform-origin: 0% 0%;
+
+    &:nth-of-type(2) {
+      transform-origin: 50% 50%;
+    }
+  }
+
+  border: 1px solid red;
+}
+

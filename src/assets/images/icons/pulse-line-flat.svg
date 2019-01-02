@@ -1,0 +1,11 @@
+<svg id="pulse" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 10">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #231f20;
+      }
+    </style>
+  </defs>
+  <title>pulse-line-flat</title>
+  <path id="pulse_line" class="cls-1" d="M20,44a5,5,0,0,0,5,5h78a5,5,0,0,0,0-10H25a5,5,0,0,0-5,5" transform="translate(-20 -39)"/>
+</svg>
