@@ -53,11 +53,13 @@ class Nav {
       easing: 'easeOutExpo',
     })
 
+    var moveX = Math.cos(20) + 'px';
+    var moveY = Math.cos(-70) + 'px';
     anime({
       targets: this.mob_menu_icon[2],
       duration: animConfig.durationShort,
-      // translateX: '2px',
-      // translateY: '-7px',
+      // translateX: moveX,
+      // translateY: moveY,
       rotate: '-45deg',
       easing: 'easeOutExpo',
     })

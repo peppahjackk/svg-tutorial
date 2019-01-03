@@ -1,0 +1,13 @@
+<svg id="hamburger" xmlns="http://www.w3.org/2000/svg" width="35.38" height="25" viewBox="0 0 35.38 25">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #7f76d1;
+      }
+    </style>
+  </defs>
+  <title>menu-hamburger-fatPad</title>
+  <path class="cls-1" d="M3.69,6.5H34.31a2.39,2.39,0,0,1,0,4.77H3.69a2.39,2.39,0,0,1,0-4.77Z" transform="translate(-1.31 -6.5)"/>
+  <path class="cls-1" d="M3.69,16.62H34.31a2.38,2.38,0,0,1,0,4.76H3.69a2.38,2.38,0,1,1,0-4.76Z" transform="translate(-1.31 -6.5)"/>
+  <path class="cls-1" d="M3.69,26.73H34.31a2.39,2.39,0,0,1,0,4.77H3.69a2.39,2.39,0,0,1,0-4.77Z" transform="translate(-1.31 -6.5)"/>
+</svg>
