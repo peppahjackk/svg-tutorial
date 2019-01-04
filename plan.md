@@ -46,6 +46,7 @@
     - Rotate, Bounce, opacity, color
   - Line draw
   - Mask reveal
+    - Clippy for path reveal
   - Interior el animation (adv)
     - Coordinate systems
     - Transform origin - relative to entire 
