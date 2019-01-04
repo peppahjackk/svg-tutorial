@@ -10,6 +10,7 @@
     - animate stroke
 
 2. Converting asset into svg
+* Naming convention
   - Sketch
     1. Select Icon
     2. Set X/Y to 0/0
@@ -62,6 +63,15 @@
   - Text in svg
   - Clip-path in IE (stroke array as well?)
   - Fallbacks
+
+
+## Output
+pin animation
+  - anime keyframes
+  - update animating t/f
+Nurse line draw
+circle plus
+monitor pulse
 
 
 ## Presention medium
