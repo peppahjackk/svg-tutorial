@@ -31,10 +31,12 @@ class Icon {
       this.el.addEventListener('mouseup', this.nurseAnimTrigger.bind(this));
       this.el.addEventListener('mouseover', this.nurseAnimTrigger.bind(this));
     } else if (classes.contains('circle')) {
-      this.rotate();
+      this.circleAnimInit();
+      this.circle = new CircleIcon(this.el);
+      this.circle.init();
 
-      this.el.addEventListener('mousedown', this.rotate.bind(this));
-      this.el.addEventListener('mouseover', this.rotate.bind(this));
+      this.el.addEventListener('mousedown', this.circle.restart.bind(this));
+      this.el.addEventListener('mouseover', this.circle.restart.bind(this));
     } else if (classes.contains('pulse')) {
       this.pulseLine = this.el.querySelector('#pulse-line');
 
@@ -54,26 +56,35 @@ class Icon {
     return false;
   }
 
-  rotate(e, el, deg = '360') {
-    if (el == null) {
-      el = this.el;
-    }
+  circleAnimInit(deg = '360') {
 
-    this.handleAnimState().then((cancelAnim) => {
-      if (cancelAnim) return;
+    // this.handleAnimState().then((cancelAnim) => {
+    this.animating = true;
+    // if (cancelAnim) return;
 
-      anime({
-        targets: el,
-        rotate: {
-          value: '+=' + deg
-        },
-        duration: animConfig.duration,
-        complete: () => {
-          this.animating = false;
-        }
-      })
+    this.animation = anime({
+      targets: this.el.querySelector('#circle-outer'),
+      rotate: {
+        value: '+=' + deg
+      },
+      duration: animConfig.duration,
+      complete: () => {
+        this.animating = false;
+        console.log(this);
+      }
     })
+    // })
   }
+
+  circleAnimTrigger() {
+    if (this.animating) return;
+
+    anime.remove(this.el); // Remove any other animation commands attached to the el
+    this.animating = true;
+
+    this.animation.restart();
+  }
+
 
   pinAnim(e) {
     this.handleAnimState().then((cancelAnim) => {
@@ -148,7 +159,7 @@ class Icon {
     } else {
       this.nurseAnim.restart();
     }
-    
+
   }
 
   monitorAnim() {
@@ -170,7 +181,7 @@ class Icon {
       this.animPulseLine();
     }
   }
-  
+
   animPulseLine() {
     anime({
       targets: this.pulseLine,
@@ -182,6 +193,34 @@ class Icon {
         this.animating = false;
       }
     })
+  }
+}
+
+class CircleIcon extends Icon {
+  constructor(el) {
+    super(el)
+    console.log('anything');
+    // this.animating = false;
+  }
+
+  init() {
+    console.log(this);
+    this.animating = true;
+    this.animation =
+      anime({
+        targets: this.el.querySelector('#circle-outer'),
+        rotate: {
+          value: '+=' + deg
+        },
+        duration: animConfig.duration,
+        complete: () => {
+          this.animating = false;
+        }
+      })
+  }
+
+  restart() {
+    this.animation.restart();
   }
 }
 

@@ -7,30 +7,16 @@
   }
 }
 
-.icon-container {
-  position: relative;
-  svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-}
-#pulse-beat {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: $accent;
-}
-
 .pin .circle {
   transform-origin: 51.499px 51.25px;
 }
 
 .icon.nurse path {
   fill: rgba(0,0,0,0);
+}
+
+.icon.circle path {
+  transform-origin: 50% 50%;
 }
 
 #pulse-line {
@@ -62,23 +48,3 @@
     clip-path: polygon(0 0, 0% 0, 0% 100%, 0% 100%);
   }
 }
-
-// #hamburger {
-//   position: relative;
-
-//   path {
-//     position: absolute;
-//     // transform-origin: 0% 0%;
-
-//     &:nth-of-type(2) {
-//       transform-origin: 50% 50%;
-//     }
-
-//     &:nth-of-type(3) {
-//       // transform-origin: 0% 100%;
-//     }
-//   }
-
-//   border: 1px solid red;
-// }
-
