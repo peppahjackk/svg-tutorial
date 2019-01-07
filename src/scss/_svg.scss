@@ -11,10 +11,6 @@
   transform-origin: 51.499px 51.25px;
 }
 
-.icon.nurse path {
-  fill: rgba(0,0,0,0);
-}
-
 .icon.circle path {
   transform-origin: 50% 50%;
 }
@@ -24,10 +20,10 @@
   transform-origin: 50% 50%;
 
   .reveal & {
-    animation: showPulse 2s linear forwards;
+    animation: showPulse 1.5s linear forwards;
   }
   .hide & {
-    animation: hidePulse 0.5s linear forwards;
+    animation: hidePulse 0.25s linear forwards;
   }
 }
 

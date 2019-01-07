@@ -148,7 +148,7 @@ function serve() {
     browserSync(options);
 
     // Watches for changes in files inside the './src' folder.
-    gulp.watch(SOURCE_PATH + '/js/**/*.js', ['watch-js']);
+    gulp.watch(SOURCE_PATH + '/js/**/*', ['watch-js']);
 
     // Watches for updates to sass css preprocessor files.
     gulp.watch(SOURCE_PATH + '/scss/**/*.scss', ['watch-sass']);

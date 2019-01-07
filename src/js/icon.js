@@ -1,6 +1,5 @@
 import anime from 'animejs'
-import animConfig from 'animConfig.json'
-import Pin from 'pin';
+import config from 'config.json'
 
 class Icon {
     constructor() {
@@ -12,13 +11,13 @@ class Icon {
             targets: this.el,
             opacity: [0, 1],
             easing: 'easeInQuad',
-            duration: animConfig.duration,
+            duration: config.duration,
             begin: ()=>{
                 this.animating = true;
             },
             complete: ()=>{
                 this.animating = false;
-                console.log(this);
+                this.animate();
             }
         })
     }

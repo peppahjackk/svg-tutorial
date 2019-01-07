@@ -2,20 +2,24 @@ import anime from 'animejs'
 import config from 'config.json'
 import Icon from 'icon'
 
-class Pin extends Icon {
+class Circle extends Icon {
     constructor(element) {
         super();
+
         this.el = element;
+        this.innerCircle = this.el.querySelector('#circle-inner');
 
         Icon.prototype.fadeIn.call(this);
 
         this.init();
     }
-    
-    init() {
-        this.circle = this.el.querySelector('.circle');
 
-        this.animation = anime.timeline({
+    init() {
+        this.animation = anime({
+            targets: this.innerCircle,
+            rotate: {
+                value: '+=360'
+            },
             duration: config.duration, // Default 2000
             autoplay: false,
             begin: () => {
@@ -24,19 +28,6 @@ class Pin extends Icon {
             complete: () => {
                 this.animating = false;
             }
-        }).add({
-            targets: this.el,
-            rotateY: '+=180',
-            translateY: [
-                {value: 0, duration: 1, easing: 'easeInOutQuad'},
-                {value: 20, duration: config.duration * 0.075, delay: config.duration * 0.05, easing: 'easeInQuad'},
-                {value: 0, duration: config.duration * 0.05, delay: 0, easing: 'easeInQuad'}
-            ],
-        }).add({
-            targets: this.circle,
-            rotateY:  '+=180',
-            elasticity: 600,
-            offset: 0,
         })
 
         this.setListeners();
@@ -57,4 +48,4 @@ class Pin extends Icon {
     }
 }
 
-export default Pin;
+export default Circle;

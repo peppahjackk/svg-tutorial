@@ -66,12 +66,26 @@
 
 
 ## Output
-pin animation
-  - anime keyframes
-  - update animating t/f
-Nurse line draw
 circle plus
+  - illustrator break up
+  - prototypical inheritance
+  - config duration
+  - anime in general
+  - tgt inner svg path
+  - relative values
+  - elasticity
+pin animation
+  - anime timeline
+  - anime keyframes
+    - start value workaround
+  - on update animating t/f
+Nurse line draw
+  - timeline default value, one leg changes (easing)
+  - relative offset
+  - color animation
 monitor pulse
+  - loop
+  - mix in css animation
 
 
 ## Presention medium
