@@ -1,6 +1,6 @@
 import anime from 'animejs'
 import config from 'config.json'
-import Icon from 'icon'
+import Icon from './icon'
 
 class Nurse extends Icon {
     constructor(element) {
@@ -26,11 +26,11 @@ class Nurse extends Icon {
             }
         }).add({
             fill: 'rgba(255,255,255,0)',
-            duration: (config.duration * 0.25), // 500 default
+            duration: (config.duration * 0.2), // 400 default
         }).add({
             strokeDashoffset: [anime.setDashoffset, 0],
             easing: 'linear',
-            duration: (config.duration * 0.75), // 1500 default
+            duration: config.duration, // 2000 default
             offset: 0,
         }).add({
             fill: 'rgba(255,255,255,1)',
@@ -44,8 +44,6 @@ class Nurse extends Icon {
 
     animate() {
         if (this.animating) return;
-
-        anime.remove(this.el); // Remove any other animation commands attached to the el
 
         this.animation.restart();
     }

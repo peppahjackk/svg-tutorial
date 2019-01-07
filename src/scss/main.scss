@@ -1,30 +1,8 @@
-@import 'colors';
-@import 'typography';
-@import 'spacing';
-@import 'layout';
+@import './template/colors';
+@import './template/base';
+@import './template/typography';
+@import './template/spacing';
+@import './template/layout';
+
 @import 'svg';
 
-html,
-body {
-  margin: 0;
-  background-color: $base;
-}
-
-body {
-  display: block;
-  position: relative;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin-bottom: 0.5rem;
-}
-
-p:last-child {
-  margin-bottom: 0;
-}

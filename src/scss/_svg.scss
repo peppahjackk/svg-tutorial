@@ -7,40 +7,18 @@
   }
 }
 
-.pin .circle {
+.bg-color-fill {
+  fill: $base !important;
+}
+
+.icon.circle #circle-inner {
+  transform-origin: 50% 50%;
+}
+
+.icon.pin .circle {
   transform-origin: 51.499px 51.25px;
 }
 
-.icon.circle path {
-  transform-origin: 50% 50%;
-}
-
 #pulse-line {
-  clip-path: polygon(0 0, 0% 0, 0% 100%, 0% 100%);
   transform-origin: 50% 50%;
-
-  .reveal & {
-    animation: showPulse 1.5s linear forwards;
-  }
-  .hide & {
-    animation: hidePulse 0.25s linear forwards;
-  }
-}
-
-@keyframes showPulse {
-  0% {
-    clip-path: polygon(0 0, 0% 0, 0% 100%, 0% 100%);
-  }
-  100% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  }
-}
-
-@keyframes hidePulse {
-  0% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  }
-  100% {
-    clip-path: polygon(0 0, 0% 0, 0% 100%, 0% 100%);
-  }
 }

@@ -3,7 +3,7 @@ import config from 'config.json'
 
 class Icon {
     constructor() {
-        this.animating = true;
+        this.animating = false;
     }
 
     fadeIn() {

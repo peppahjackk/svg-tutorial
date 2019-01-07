@@ -1,6 +1,6 @@
 import anime from 'animejs'
 import config from 'config.json'
-import Icon from 'icon'
+import Icon from './icon'
 
 class Pin extends Icon {
     constructor(element) {
@@ -44,9 +44,6 @@ class Pin extends Icon {
 
     animate() {
         if (this.animating) return;
-
-        anime.remove(this.el); // Remove any other animation commands attached to the el
-        this.animating = true;
 
         this.animation.restart();
     }

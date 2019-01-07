@@ -1,10 +1,10 @@
-import Pin from 'pin';
-import Monitor from 'monitor';
-import Nurse from 'nurse';
-import Circle from 'circle';
+import Pin from 'icons/pin';
+import Monitor from 'icons/monitor';
+import Nurse from 'icons/nurse';
+import Circle from 'icons/circle';
 
 var icons = document.querySelectorAll('.icon');
-var iconList = [];
+
 for (var i = 0; i < icons.length; i++) {
   if (icons[i].classList.contains('pin')) {
     new Pin(icons[i]);

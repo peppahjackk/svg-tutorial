@@ -1,6 +1,6 @@
 import anime from 'animejs'
 import config from 'config.json'
-import Icon from 'icon'
+import Icon from './icon'
 
 class Circle extends Icon {
     constructor(element) {
@@ -35,9 +35,6 @@ class Circle extends Icon {
 
     animate() {
         if (this.animating) return;
-
-        anime.remove(this.el); // Remove any other animation commands attached to the el
-        this.animating = true;
 
         this.animation.restart();
     }
