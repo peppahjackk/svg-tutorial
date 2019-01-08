@@ -48,7 +48,7 @@ class Monitor extends Icon {
             begin: () => {
                 this.animating = true;
             },
-            complete: (anim, x) => {
+            complete: () => {
                 this.animating = false;
                 this.atEnd = false;
 

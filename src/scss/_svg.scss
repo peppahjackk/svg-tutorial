@@ -1,14 +1,11 @@
-.icon {
-  path {
-    fill: white;
-  }
-  &:not(:last-child) {
-    margin-right: 1em;
-  }
-}
-
 .bg-color-fill {
   fill: $base !important;
+}
+
+svg.icon {
+  // path, circle {
+    fill: rgba(255,255,255,1);
+  // }
 }
 
 .icon.circle #circle-inner {

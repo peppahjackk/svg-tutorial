@@ -4,6 +4,10 @@ body {
   background-color: $base;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   display: block;
   position: relative;
@@ -21,4 +25,18 @@ p {
 
 p:last-child {
   margin-bottom: 0;
+}
+
+.container {
+  .center {
+    text-align: center;
+  }
+  
+  .left {
+    text-align: left;
+  }
+  
+  .right {
+    text-align: right;
+  } 
 }

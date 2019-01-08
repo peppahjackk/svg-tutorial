@@ -2,6 +2,10 @@
 
 ## TO DO
 [] - Slides animation iframe
+[x] - Break out icons
+[] - Test IE
+[] - Build tutorial animation
+[] - Check out sketch SVG plugins
 
 ## Talking points
 
@@ -40,8 +44,9 @@
   - Illustrator
     - If you need to separate paths, make changes
     1. Select paths (object -> compound path -> release as needed)
-    2. Ensure units are set to pixels
-    3. File -> Export As
+    2. Lower layer will appear on top
+    3. Ensure units are set to pixels
+    4. File -> Export As
       - Styling
       - Font
       - Uncheck minify/responsive

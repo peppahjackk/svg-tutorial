@@ -1,3 +1,4 @@
+import DeviceDetect from '../template/DeviceDetect'
 import anime from 'animejs'
 import config from 'config.json'
 import Icon from './icon'
@@ -24,6 +25,7 @@ class Circle extends Icon {
             autoplay: false,
             begin: () => {
                 this.animating = true;
+                console.log(this, 'animating');
             },
             complete: () => {
                 this.animating = false;
